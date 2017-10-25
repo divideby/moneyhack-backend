@@ -19,3 +19,9 @@ git commit -m "message"
 git remote add origin git@github.com:divideby/moneyhack-backend.git
 git push -u origin master
 ```
+
+## Установка Express
+
+```
+npm install express --save
+```
