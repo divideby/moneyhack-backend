@@ -10,10 +10,16 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 console.log(web3.eth.coinbase);
 
-const helloContract = web3.eth.contract(contract.ABI).at(contract.address);
+const { eth } = web3;
+
+const helloContract = eth.contract(contract.ABI).at(contract.address);
 
 app.get("/", function(req, res) {
-  res.send(helloContract.getData());
+  const { personal } = web3;
+
+  personal.unlockAccount(eth.coinbase, "123", 1000);
+
+  res.send(helloContract.setData.sendTransaction("Hell", { from: eth.coinbase }));
 });
 
 app.listen(8000, function() {
