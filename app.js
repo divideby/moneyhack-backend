@@ -1,5 +1,8 @@
 const express = require("express");
+const Web3 = require("web3");
+
 const app = express();
+const web3 = new Web3();
 
 app.get("/", function(req, res) {
   res.send("Hello");
