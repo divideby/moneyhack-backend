@@ -12,9 +12,10 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 console.log(eth.coinbase);
 
-const transaction = "0x32a79108b46aab3ee2786c8abe75ecbda4bd6d2d4987fb7129e87b5456d7b9f1";
+const transaction = "0x254d9e180c610bafd1b496c3149646b230109826fffd064174c7fe59d1fb66ce";
 
 console.log(eth.getTransaction(transaction));
+console.log(eth.blockNumber);
 
 const helloContract = eth.contract(contract.ABI).at(contract.address);
 
