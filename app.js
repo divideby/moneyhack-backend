@@ -4,6 +4,8 @@ const Web3 = require("web3");
 const app = express();
 const web3 = new Web3();
 
+web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+
 app.get("/", function(req, res) {
   res.send("Hello");
 });
