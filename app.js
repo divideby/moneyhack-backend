@@ -6,11 +6,15 @@ const contract = require("./contract");
 const app = express();
 const web3 = new Web3();
 
+const { eth } = web3;
+
 web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
-console.log(web3.eth.coinbase);
+console.log(eth.coinbase);
 
-const { eth } = web3;
+const transaction = "0x32a79108b46aab3ee2786c8abe75ecbda4bd6d2d4987fb7129e87b5456d7b9f1";
+
+console.log(eth.getTransaction(transaction));
 
 const helloContract = eth.contract(contract.ABI).at(contract.address);
 
